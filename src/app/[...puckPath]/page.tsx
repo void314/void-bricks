@@ -14,6 +14,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { ThemeProvider } from '@/components/providers';
+import { Toaster } from '@/components/ui/sonner';
 
 import { getPage } from '../../lib/get-page';
 import { Client } from './client';
@@ -39,6 +40,7 @@ export default async function Page({ params }: { params: Promise<{ puckPath: str
     return (
         <ThemeProvider>
             <Client data={data} />
+            <Toaster />
         </ThemeProvider>
     );
 }

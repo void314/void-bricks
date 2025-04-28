@@ -13,7 +13,7 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
             <Puck
                 overrides={{
                     puck({ ...props }) {
-                        return <div className="puck-root" {...props} />;
+                        return <main className="puck-root" {...props} />;
                     },
                 }}
                 config={config}

@@ -1,1 +1,30 @@
-{"/":{"content":[{"type":"HeadingBlock","props":{"title":"Edit this page by adding /edit to the end of the URL","id":"HeadingBlock-1694032984497","twClasses":"w-full"}},{"type":"ThemeSwitcher","props":{"id":"ThemeSwitcher-44640c9a-4978-459a-8b78-9c1864f79de7"}},{"type":"LocaleSwitcher","props":{"id":"LocaleSwitcher-2ca456c9-39fa-41bf-9506-aa573278a316"}},{"type":"ArticleList","props":{"articles":[{"title":"Article 2","href":""},{"title":"Article 1","href":"/article/1"},{"title":"Article 3","href":"/article/3"}],"id":"ArticleList-13cee40d-3aed-4e2c-b904-fa6e367ee310"}}],"root":{"props":{"title":""}},"zones":{}}}
+{
+    "/": {
+        "root": { "props": {} },
+        "content": [{ "type": "Conteiner", "props": { "id": "Conteiner-0e47a3ae-06ee-48cc-8c8f-893f0d9ec372" } }],
+        "zones": {
+            "Conteiner-0e47a3ae-06ee-48cc-8c8f-893f0d9ec372:content": [
+                { "type": "Header", "props": { "id": "Header-2a9b59f0-76e9-46da-80a4-de37187353c9" } },
+                { "type": "Conteiner", "props": { "id": "Conteiner-a2d911a8-f8c0-4e80-9362-9f66f2f4e3a5" } },
+                { "type": "Footer", "props": { "id": "Footer-2dbd972e-c7d9-49c2-9ad9-88f277f5a50e" } }
+            ],
+            "Conteiner-a2d911a8-f8c0-4e80-9362-9f66f2f4e3a5:content": [
+                {
+                    "type": "HeadingBlock",
+                    "props": {
+                        "title": "Heading",
+                        "twClasses": "",
+                        "id": "HeadingBlock-9dbd2472-39d1-445f-b48c-74e9c2ccc623"
+                    }
+                }
+            ]
+        }
+    },
+    "/product": {
+        "root": { "props": {} },
+        "content": [
+            { "type": "ThemeSwitcher", "props": { "id": "ThemeSwitcher-f1cf9a7d-bac2-4ca8-b2c6-d909ebf23d33" } }
+        ],
+        "zones": {}
+    }
+}
