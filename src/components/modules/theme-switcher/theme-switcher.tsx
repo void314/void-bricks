@@ -1,16 +1,11 @@
 'use client';
 
-import { useTransition } from 'react';
-
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/ui/button';
 
-type Props = {};
-
-export const ThemeSwitcher = ({}: Props) => {
-    const [isPending, startTransition] = useTransition();
+export const ThemeSwitcher = () => {
     const { setTheme, theme } = useTheme();
 
     return (
