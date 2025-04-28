@@ -11,11 +11,6 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
     return (
         <ThemeProvider forcedTheme="light">
             <Puck
-                overrides={{
-                    puck({ ...props }) {
-                        return <main className="puck-root" {...props} />;
-                    },
-                }}
                 config={config}
                 data={data}
                 iframe={{

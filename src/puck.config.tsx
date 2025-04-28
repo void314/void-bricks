@@ -2,15 +2,16 @@ import { useId } from 'react';
 
 import { type Config, DropZone } from '@measured/puck';
 
-import { ArticleList, Footer, Header, LocaleSwitcher, ThemeSwitcher } from './components/modules';
+import { ArticleList, Footer, Header, HeroSection, LocaleSwitcher, ThemeSwitcher } from './components/modules';
 
 type Props = {
-    Conteiner: {};
-    Header: {};
-    Footer: {};
+    Conteiner: object;
+    Header: object;
+    Footer: object;
+    HeroSection: object;
     HeadingBlock: { title: string; twClasses: string };
-    ThemeSwitcher: {};
-    LocaleSwitcher: {};
+    ThemeSwitcher: object;
+    LocaleSwitcher: object;
     ArticleList: {
         articles: { title: string; href?: string }[];
     };
@@ -21,13 +22,8 @@ export const config: Config<Props> = {
         Conteiner: {
             defaultProps: {},
             fields: {},
-            render: () => {
-                return (
-                    <div className="container mx-auto flex w-full flex-1 flex-col">
-                        <DropZone zone={'content'} />
-                    </div>
-                );
-            },
+            render: () => <DropZone zone={'content'} className="container mx-auto px-4" />,
+            label: 'Conteiner',
         },
         Header: {
             fields: {},
@@ -38,6 +34,11 @@ export const config: Config<Props> = {
             fields: {},
             defaultProps: {},
             render: () => <Footer />,
+        },
+        HeroSection: {
+            fields: {},
+            defaultProps: {},
+            render: () => <HeroSection />,
         },
         HeadingBlock: {
             fields: {
@@ -86,6 +87,9 @@ export const config: Config<Props> = {
             },
             render: ({ articles }) => <ArticleList articles={articles} />,
         },
+    },
+    root: {
+        render: ({ children }) => <div className="bg-background min-h-screen">{children}</div>,
     },
 };
 
