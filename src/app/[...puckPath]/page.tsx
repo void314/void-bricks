@@ -9,41 +9,41 @@
  * a static file. Subsequent visits will receive the cache. Publishing a page
  * will invalidate the cache as the page is written in /api/puck/route.ts
  */
+import { Metadata } from 'next';
 
-import { Client } from "./client";
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
-import { getPage } from "../../lib/get-page";
+import { notFound } from 'next/navigation';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ puckPath: string[] }>;
-}): Promise<Metadata> {
-  const { puckPath = [] } = await params;
-  const path = `/${puckPath.join("/")}`;
+import { ThemeProvider } from '@/components/providers';
 
-  return {
-    title: getPage(path)?.root.props?.title,
-  };
+import { getPage } from '../../lib/get-page';
+import { Client } from './client';
+
+export async function generateMetadata({ params }: { params: Promise<{ puckPath: string[] }> }): Promise<Metadata> {
+    const { puckPath = [] } = await params;
+    const path = `/${puckPath.join('/')}`;
+
+    return {
+        title: getPage(path)?.root.props?.title,
+    };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ puckPath: string[] }>;
-}) {
-  const { puckPath = [] } = await params;
-  const path = `/${puckPath.join("/")}`;
-  const data = getPage(path);
+export default async function Page({ params }: { params: Promise<{ puckPath: string[] }> }) {
+    const { puckPath = [] } = await params;
+    const path = `/${puckPath.join('/')}`;
+    const data = getPage(path);
 
-  if (!data) {
-    return notFound();
-  }
+    if (!data) {
+        return notFound();
+    }
 
-  return <Client data={data} />;
+    return (
+        <ThemeProvider>
+            <Client data={data} />
+        </ThemeProvider>
+    );
 }
 
 // Force Next.js to produce static pages: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // Delete this if you need dynamic rendering, such as access to headers or cookies
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
+

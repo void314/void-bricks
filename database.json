@@ -1,16 +1,1 @@
-{
-    "/": {
-        "content": [
-            {
-                "type": "HeadingBlock",
-                "props": {
-                    "title": "Edit this page by adding /edit to the end of the URL",
-                    "id": "HeadingBlock-1694032984497",
-                    "twClasses": "w-full"
-                }
-            }
-        ],
-        "root": { "props": { "title": "" } },
-        "zones": {}
-    }
-}
+{"/":{"content":[{"type":"HeadingBlock","props":{"title":"Edit this page by adding /edit to the end of the URL","id":"HeadingBlock-1694032984497","twClasses":"w-full"}},{"type":"ThemeSwitcher","props":{"id":"ThemeSwitcher-44640c9a-4978-459a-8b78-9c1864f79de7"}},{"type":"LocaleSwitcher","props":{"id":"LocaleSwitcher-2ca456c9-39fa-41bf-9506-aa573278a316"}},{"type":"ArticleList","props":{"articles":[{"title":"Article 2","href":""},{"title":"Article 1","href":"/article/1"},{"title":"Article 3","href":"/article/3"}],"id":"ArticleList-13cee40d-3aed-4e2c-b904-fa6e367ee310"}}],"root":{"props":{"title":""}},"zones":{}}}

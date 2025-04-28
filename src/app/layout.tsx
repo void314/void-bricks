@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
 import { getLocale } from 'next-intl/server';
 
 import { Geist, Geist_Mono } from 'next/font/google';
+
+import { ThemeProvider } from '@/components/providers';
 
 import './globals.css';
 
@@ -29,7 +32,9 @@ export default async function RootLayout({
 
     return (
         <html suppressHydrationWarning lang={locale}>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+                <NextIntlClientProvider>{children}</NextIntlClientProvider>
+            </body>
         </html>
     );
 }
